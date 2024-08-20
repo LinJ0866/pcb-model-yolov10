@@ -79,6 +79,10 @@ from .transformer import (
     TransformerEncoderLayer,
     TransformerLayer,
 )
+from .asf import (
+    Zoom_cat, ScalSeq, Add, channel_att, attention_model
+)
+from .gsconv import GSConv
 
 __all__ = (
     "Conv",
@@ -143,5 +147,7 @@ __all__ = (
     "C2fCIB",
     "SCDown",
     "RepVGGDW",
-    "v10Detect"
+    "v10Detect",
+    'Zoom_cat', 'ScalSeq', 'Add', 'channel_att', 'attention_model',
+    'GSConv'
 )
