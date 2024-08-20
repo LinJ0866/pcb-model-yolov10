@@ -6,7 +6,7 @@ if [ ! -n "$1" ]; then
   exit 0
 fi
 
-timescope=`date +"%d%H%M"`
+timescope=`date +"%m%d_%H%M"`
 
 echo "copy $1 to $timescope/yolov10.pth and prepare to tar version $timescope"
 mkdir $timescope
