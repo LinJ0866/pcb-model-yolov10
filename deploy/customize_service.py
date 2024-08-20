@@ -62,8 +62,8 @@ class yolo_detection(PTServingBaseService):
         result = get_sliced_prediction(
             self.capture,
             self.model,
-            slice_height=896,
-            slice_width=896,
+            slice_height=640,
+            slice_width=640,
             overlap_height_ratio=0.2,
             overlap_width_ratio=0.2
         )
