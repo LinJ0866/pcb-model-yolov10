@@ -10,7 +10,8 @@ import re
 import shutil
 import subprocess
 import time
-from importlib import metadata
+# from importlib import metadata
+import importlib_metadata as metadata
 from pathlib import Path
 from typing import Optional
 
