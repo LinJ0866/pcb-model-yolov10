@@ -1,0 +1,21 @@
+# Ultralytics YOLO 🚀, AGPL-3.0 license
+# COCO 2017 dataset https://cocodataset.org by Microsoft
+# Documentation: https://docs.ultralytics.com/datasets/detect/coco/
+# Example usage: yolo train data=coco.yaml
+# parent
+# ├── ultralytics
+# └── datasets
+#     └── coco  ← downloads here (20.1 GB)
+
+# Train/val/test sets as 1) dir: path/to/imgs, 2) file: path/to/imgs.txt, or 3) list: [path/to/imgs1, path/to/imgs2, ..]
+path: /share/datasets/pcb/pcb_pku/ # dataset root dir
+train: train2017.txt # train images (relative to 'path') 
+val: val2017.txt # val images (relative to 'path') 
+
+# Classes
+names:
+  0: Mouse_bite
+  1: Open_circuit
+  2: Short
+  3: Spur
+  4: Spurious_copper
