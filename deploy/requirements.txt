@@ -1,0 +1,9 @@
+huggingface_hub==0.16.4
+py-cpuinfo==9.0.0
+chardet==4.0.0
+charset-normalizer==2.1.0
+urllib3==1.25.11
+shapely==2.0.6
+pybboxes==0.1.6
+scikit-image==0.19.3
+imagecodecs==2021.11.20

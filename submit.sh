@@ -11,8 +11,10 @@ timescope=`date +"%m%d_%H%M"`
 echo "copy $1 to $timescope/yolov10.pth and prepare to tar version $timescope"
 mkdir $timescope
 cp -r ultralytics $timescope/ultralytics
+cp -r deploy/sahi $timescope/sahi
 cp deploy/customize_service.py $timescope/customize_service.py
 cp deploy/config.json $timescope/config.json
+cp deploy/requirements.txt $timescope/requirements.txt
 cp $1 $timescope/yolov10.pt
 
 obsutil cp $timescope obs://pcb-final-linj0866/submit/ -r -f

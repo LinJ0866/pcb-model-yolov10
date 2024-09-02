@@ -77,8 +77,23 @@
             },
             {
                 "restraint": "EXACT",
-                "package_version": "0.11.16",
-                "package_name": "sahi"
+                "package_version": "2.0.6",
+                "package_name": "shapely"
+            },
+            {
+                "restraint": "EXACT",
+                "package_version": "0.1.6",
+                "package_name": "pybboxes"
+            },
+            {
+                "restraint": "EXACT",
+                "package_version": "0.19.3",
+                "package_name": "scikit-image"
+            },
+            {
+                "restraint": "EXACT",
+                "package_version": "2021.11.20",
+                "package_name": "imagecodecs"
             }
         ]
     }]

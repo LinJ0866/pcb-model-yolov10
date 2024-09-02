@@ -1,7 +1,6 @@
-from ultralytics import YOLO
+from ultralytics import YOLOv10
  
 
-model = YOLO('ultralytics/cfg/models/v10/yolov10-asf.yaml') \
-    .load('/home/linj/workspace/yolov10/runs/detect/train7/weights/best.pt')
+model = YOLOv10('ultralytics/cfg/models/v10/yolov10s-p6.yaml').load('yolov10s.pt')
  
-model.train(data='pcb_huawei.yaml', epochs=30, imgsz=640, batch=16, device=0)
+model.train(data='pcb_huawei.yaml', epochs=50, imgsz=640, batch=32, device=0)
