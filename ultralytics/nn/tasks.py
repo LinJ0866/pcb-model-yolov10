@@ -55,8 +55,9 @@ from ultralytics.nn.modules import (
     RepVGGDW,
     v10Detect,
     Zoom_cat, ScalSeq, Add, channel_att, attention_model,
-    GSConv,
+    GSConv, VoVGSCSP, 
     stem,MBConv,FusedMBConv,
+    Concat_BIFPN
 )
 from ultralytics.utils import DEFAULT_CFG_DICT, DEFAULT_CFG_KEYS, LOGGER, colorstr, emojis, yaml_load
 from ultralytics.utils.checks import check_requirements, check_suffix, check_yaml
@@ -892,7 +893,7 @@ def parse_model(d, ch, verbose=True):  # model_dict, input_channels(3)
             PSA,
             SCDown,
             C2fCIB,
-            GSConv,
+            GSConv, VoVGSCSP,
             stem,FusedMBConv,MBConv
         }:
             c1, c2 = ch[f], args[0]
@@ -905,7 +906,7 @@ def parse_model(d, ch, verbose=True):  # model_dict, input_channels(3)
                 )  # num heads
 
             args = [c1, c2, *args[1:]]
-            if m in (BottleneckCSP, C1, C2, C2f, C2fAttn, C3, C3TR, C3Ghost, C3x, RepC3, C2fCIB):
+            if m in (BottleneckCSP, C1, C2, C2f, C2fAttn, C3, C3TR, C3Ghost, C3x, RepC3, C2fCIB, VoVGSCSP):
                 args.insert(2, n)  # number of repeats
                 n = 1
         elif m is AIFI:
@@ -920,7 +921,7 @@ def parse_model(d, ch, verbose=True):  # model_dict, input_channels(3)
             c2 = args[1] if args[3] else args[1] * 4
         elif m is nn.BatchNorm2d:
             args = [ch[f]]
-        elif m is Concat:
+        elif m in [Concat, Concat_BIFPN]:
             c2 = sum(ch[x] for x in f)
         elif m in {Detect, WorldDetect, Segment, Pose, OBB, ImagePoolingAttn, v10Detect}:
             args.append([ch[x] for x in f])

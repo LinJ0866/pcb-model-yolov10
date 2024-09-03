@@ -50,7 +50,8 @@ from .block import (
     C2fCIB,
     SCDown,
     RepVGGDW,
-    stem,FusedMBConv,MBConv
+    stem,FusedMBConv,MBConv,
+    Concat_BIFPN
 )
 from .conv import (
     CBAM,
@@ -83,7 +84,7 @@ from .transformer import (
 from .asf import (
     Zoom_cat, ScalSeq, Add, channel_att, attention_model
 )
-from .gsconv import GSConv
+from .gsconv import GSConv, VoVGSCSP
 
 __all__ = (
     "Conv",
@@ -150,5 +151,6 @@ __all__ = (
     "RepVGGDW",
     "v10Detect",
     'Zoom_cat', 'ScalSeq', 'Add', 'channel_att', 'attention_model',
-    'GSConv'
+    'GSConv', 'VoVGSCSP',
+    'Concat_BIFPN'
 )
